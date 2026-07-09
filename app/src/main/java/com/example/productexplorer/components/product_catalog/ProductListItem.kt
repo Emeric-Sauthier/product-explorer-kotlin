@@ -18,6 +18,8 @@ import com.example.productexplorer.model.ProductUi
 @Composable
 fun ProductListItem(
     product: ProductUi,
+    isFavorite: Boolean,
+    onFavoriteClick: () -> Unit,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -54,6 +56,16 @@ fun ProductListItem(
 
             Button(onClick = onClick) {
                 Text(text = "Voir le produit")
+            }
+
+            Button(onClick = onFavoriteClick) {
+                Text(
+                    text = if (isFavorite) {
+                        "Retirer des favoris"
+                    } else {
+                        "Ajouter aux favoris"
+                    }
+                )
             }
         }
     }
