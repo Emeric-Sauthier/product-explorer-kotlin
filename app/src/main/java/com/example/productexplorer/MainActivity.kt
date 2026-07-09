@@ -24,8 +24,6 @@ class MainActivity : ComponentActivity() {
             ProductExplorerTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     ProductCatalogContainer(
-                        products = sampleProducts(),
-                        categories = sampleCategories(),
                         onProductClick = {
                         },
                         modifier = Modifier.padding(innerPadding)
@@ -43,11 +41,16 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ProductCatalogScreenLightPreview() {
     ProductExplorerTheme(darkTheme = false) {
-        ProductCatalogContainer(
+        ProductCatalogScreen(
             products = sampleProducts(),
             categories = sampleCategories(),
-            onProductClick = {
-            },
+            searchQuery = "",
+            onSearchQueryChange = {},
+            showOnlyInStock = false,
+            onToggleStockFilter = {},
+            favoriteProductIds = listOf(1),
+            onFavoriteClick = {},
+            onProductClick = {}
         )
     }
 }
@@ -59,11 +62,16 @@ fun ProductCatalogScreenLightPreview() {
 @Composable
 fun ProductCatalogScreenDarkPreview() {
     ProductExplorerTheme(darkTheme = true) {
-        ProductCatalogContainer(
+        ProductCatalogScreen(
             products = sampleProducts(),
             categories = sampleCategories(),
-            onProductClick = {
-            },
+            searchQuery = "audio",
+            onSearchQueryChange = {},
+            showOnlyInStock = true,
+            onToggleStockFilter = {},
+            favoriteProductIds = listOf(2),
+            onFavoriteClick = {},
+            onProductClick = {}
         )
     }
 }
@@ -97,24 +105,6 @@ fun ProductDetailScreenOutOfStockPreview() {
         ProductDetailScreen(
             product = sampleProductOutOfStock(),
             onAddToCartClick = {}
-        )
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun ProductCatalogScreenStatelessPreview() {
-    ProductExplorerTheme {
-        ProductCatalogScreen(
-            products = sampleProducts(),
-            categories = sampleCategories(),
-            searchQuery = "",
-            onSearchQueryChange = {},
-            showOnlyInStock = false,
-            onToggleStockFilter = {},
-            favoriteProductIds = listOf(1),
-            onFavoriteClick = {},
-            onProductClick = {}
         )
     }
 }
