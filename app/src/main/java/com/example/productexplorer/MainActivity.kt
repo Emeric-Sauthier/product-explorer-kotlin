@@ -10,6 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.productexplorer.model.sampleCategories
 import com.example.productexplorer.model.sampleProduct
 import com.example.productexplorer.model.sampleProductOutOfStock
 import com.example.productexplorer.model.sampleProducts
@@ -22,9 +23,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             ProductExplorerTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ProductCatalogScreen(
+                    ProductCatalogContainer(
                         products = sampleProducts(),
-                        onProductClick = {},
+                        categories = sampleCategories(),
+                        onProductClick = {
+                        },
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -40,9 +43,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ProductCatalogScreenLightPreview() {
     ProductExplorerTheme(darkTheme = false) {
-        ProductCatalogScreen(
+        ProductCatalogContainer(
             products = sampleProducts(),
-            onProductClick = {}
+            categories = sampleCategories(),
+            onProductClick = {
+            },
         )
     }
 }
@@ -54,9 +59,11 @@ fun ProductCatalogScreenLightPreview() {
 @Composable
 fun ProductCatalogScreenDarkPreview() {
     ProductExplorerTheme(darkTheme = true) {
-        ProductCatalogScreen(
+        ProductCatalogContainer(
             products = sampleProducts(),
-            onProductClick = {}
+            categories = sampleCategories(),
+            onProductClick = {
+            },
         )
     }
 }
@@ -90,6 +97,24 @@ fun ProductDetailScreenOutOfStockPreview() {
         ProductDetailScreen(
             product = sampleProductOutOfStock(),
             onAddToCartClick = {}
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ProductCatalogScreenStatelessPreview() {
+    ProductExplorerTheme {
+        ProductCatalogScreen(
+            products = sampleProducts(),
+            categories = sampleCategories(),
+            searchQuery = "",
+            onSearchQueryChange = {},
+            showOnlyInStock = false,
+            onToggleStockFilter = {},
+            favoriteProductIds = listOf(1),
+            onFavoriteClick = {},
+            onProductClick = {}
         )
     }
 }
