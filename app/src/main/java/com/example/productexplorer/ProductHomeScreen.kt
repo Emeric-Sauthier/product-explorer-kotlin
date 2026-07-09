@@ -13,7 +13,7 @@ import com.example.productexplorer.components.product_home.DailyOffer
 import com.example.productexplorer.components.product_home.FeaturedProductSection
 import com.example.productexplorer.components.product_home.HomeHeader
 import com.example.productexplorer.components.product_home.SearchPreviewBar
-import com.example.productexplorer.model.ProductUi
+import com.example.productexplorer.models.ProductUi
 
 @Composable
 fun ProductHomeScreen(

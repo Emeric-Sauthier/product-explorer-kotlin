@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.productexplorer.components.product_catalog.CategoryRow
 import com.example.productexplorer.components.product_catalog.ProductListItem
-import com.example.productexplorer.model.ProductUi
+import com.example.productexplorer.models.ProductUi
 
 @Composable
 fun ProductCatalogScreen(

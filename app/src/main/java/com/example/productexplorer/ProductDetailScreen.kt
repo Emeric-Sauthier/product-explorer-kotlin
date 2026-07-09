@@ -15,7 +15,7 @@ import com.example.productexplorer.components.product_details.ProductImage
 import com.example.productexplorer.components.product_details.ProductPriceCard
 import com.example.productexplorer.components.product_details.ProductRating
 import com.example.productexplorer.components.product_details.ProductWarrantyField
-import com.example.productexplorer.model.ProductUi
+import com.example.productexplorer.models.ProductUi
 
 @Composable
 fun ProductDetailScreen(

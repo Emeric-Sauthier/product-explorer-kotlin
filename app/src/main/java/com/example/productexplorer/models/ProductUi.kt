@@ -1,4 +1,4 @@
-package com.example.productexplorer.model
+package com.example.productexplorer.models
 
 data class ProductUi(
     val id: Int,

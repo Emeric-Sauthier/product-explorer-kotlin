@@ -10,10 +10,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.productexplorer.model.sampleCategories
-import com.example.productexplorer.model.sampleProduct
-import com.example.productexplorer.model.sampleProductOutOfStock
-import com.example.productexplorer.model.sampleProducts
+import com.example.productexplorer.models.sampleCategories
+import com.example.productexplorer.models.sampleProduct
+import com.example.productexplorer.models.sampleProductOutOfStock
+import com.example.productexplorer.models.sampleProducts
 import com.example.productexplorer.ui.theme.ProductExplorerTheme
 
 class MainActivity : ComponentActivity() {
